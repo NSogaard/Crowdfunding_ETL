@@ -1,3 +1,7 @@
+-- Creating all of the tables associted with the CSVs generated in the previous part of the project --
+-- Just remember that the CSV data has to be imported in the same order that these tables are created due to foreign key constraints --
+
+-- Creating a table for the 'contacts' csv --
 CREATE TABLE contacts (
 	contact_id INT PRIMARY KEY,
 	"first name" VARCHAR(16) NOT NULL,
@@ -5,16 +9,19 @@ CREATE TABLE contacts (
 	email VARCHAR(64) NOT NULL
 );
 
+-- Creating a table for the 'category' csv --
 CREATE TABLE category (
 	category_id VARCHAR(4) PRIMARY KEY,
 	category VARCHAR(16) NOT NULL
 );
 
+-- Creating a table for the 'subcategory' csv --
 CREATE TABLE subcategory (
 	subcategory_id VARCHAR(8) PRIMARY KEY,
 	subcategory VARCHAR(32) NOT NULL
 );
 
+-- Creating a table for the 'campaign' csv --
 CREATE TABLE campaign (
 	cf_id INT PRIMARY KEY,
 	contact_id INT NOT NULL REFERENCES contacts(contact_id),
@@ -31,6 +38,15 @@ CREATE TABLE campaign (
 	category_id VARCHAR(4) NOT NULL REFERENCES category(category_id),
 	subcategory_id VARCHAR(8) NOT NULL REFERENCES subcategory(subcategory_id)
 );
+
+-- Tests to check whether or not the data is correctly loaded from the provided CSVs --
+SELECT * FROM contacts;
+
+SELECT * FROM category;
+
+SELECT * FROM subcategory;
+
+SELECT * FROM campaign;
 
 
 

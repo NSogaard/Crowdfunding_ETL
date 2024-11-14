@@ -19,7 +19,7 @@ CREATE TABLE campaign (
 	cf_id INT PRIMARY KEY,
 	contact_id INT NOT NULL REFERENCES contacts(contact_id),
 	company_name VARCHAR(50) NOT NULL,
-	descripion VARCHAR(100) NOT NULL, 
+	description VARCHAR(100) NOT NULL, 
 	goal FLOAT NOT NULL,
 	pledged FLOAT NOT NULL,
 	outcome VARCHAR(10) NOT NULL,

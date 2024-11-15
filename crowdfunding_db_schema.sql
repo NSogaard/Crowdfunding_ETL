@@ -39,14 +39,5 @@ CREATE TABLE campaign (
 	subcategory_id VARCHAR(8) NOT NULL REFERENCES subcategory(subcategory_id)
 );
 
--- Tests to check whether or not the data is correctly loaded from the provided CSVs --
-SELECT * FROM contacts;
-
-SELECT * FROM category;
-
-SELECT * FROM subcategory;
-
-SELECT * FROM campaign;
-
 
 
